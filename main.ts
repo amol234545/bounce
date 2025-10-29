@@ -10,6 +10,9 @@ function make_title () {
     title.setPosition(scene.screenWidth() / 2, 20)
     title.startEffect(effects.bubbles)
 }
+function make_player_list () {
+	
+}
 mp.onControllerEvent(ControllerEvent.Connected, function (player2) {
     player_loading_icons[mp.getPlayerProperty(player2, mp.PlayerProperty.Number) - 1].replace(8, 2)
 })
@@ -23,6 +26,23 @@ function make_start_button () {
     start_button.setKind(SpriteKind.Button)
     start_button.setOutline(1, 8)
 }
+function start_animation () {
+    effects.clearParticles(start_button)
+    start_button.startEffect(effects.confetti)
+    start_button.startEffect(effects.halo)
+    start_button.setText("3")
+    pause(1000)
+    start_button.setText("2")
+    pause(1000)
+    start_button.setText("1")
+    pause(1000)
+    start_game()
+}
+function start_game () {
+    sprites.destroyAllSpritesOfKind(SpriteKind.MiniMenu)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Button)
+    sprites.destroyAllSpritesOfKind(SpriteKind.Text)
+}
 function make_player_menu () {
     player_menu = miniMenu.createMenuFromArray([
     miniMenu.createMenuItem("Player 1", player_loading_icons[0]),
@@ -30,6 +50,8 @@ function make_player_menu () {
     miniMenu.createMenuItem("Player 3", player_loading_icons[2]),
     miniMenu.createMenuItem("Player 4", player_loading_icons[3])
     ])
+    player_menu.setMenuStyleProperty(miniMenu.MenuStyleProperty.Border, 2)
+    player_menu.setMenuStyleProperty(miniMenu.MenuStyleProperty.BorderColor, 8)
     player_menu.setButtonEventsEnabled(false)
 }
 let player_menu: miniMenu.MenuSprite = null
@@ -87,6 +109,9 @@ let first = true
 make_title()
 make_start_button()
 make_player_menu()
+forever(function () {
+	
+})
 game.onUpdateInterval(500, function () {
     player_menu.moveSelection(miniMenu.MoveDirection.Down)
     for (let value of player_loading_icons) {
