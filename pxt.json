@@ -8,7 +8,15 @@
         "controller": "*",
         "darts": "*",
         "Timers": "github:microsoft/arcade-timers#v1.1.0",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
+        "browser-events": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
+        "Color Fading": "github:jwunderl/pxt-color#v0.2.3",
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
+        "arcade-mini-menu": "github:riknoll/arcade-mini-menu#v0.0.1",
+        "pxt-lanterns": "github:WoofWoofCodes/lanterns#v1.1.0",
+        "pxt-mini-menu-cursor": "github:WoofWoofCodes/pxt-mini-menu-cursor#v1.1.0",
+        "arcade-fake-button-press": "github:riknoll/arcade-fake-button-press#v0.0.5"
     },
     "files": [
         "main.blocks",
